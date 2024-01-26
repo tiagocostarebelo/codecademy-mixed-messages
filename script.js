@@ -1,22 +1,43 @@
-console.log('Working')
+let individualMessage = [];
 
-const generateRandomNumber = () => {
-    const randomNumber = Math.floor(Math.random() * 3);
+const generateRandomNumber = (num) => {
+    const randomNumber = Math.floor(Math.random() * num);
     return randomNumber;
 };
 
-const messages = {
-    quotes: ["Believe in yourself.", "The only limit is your mind.", "Success is a journey, not a destination."],
-    advice: ["Take one step at a time.", "Embrace challenges as opportunities.", "Learn from your mistakes."],
-    affirmations: ["I am capable of achieving my goals.", "I attract positivity into my life.", "I am resilient and strong."],
+const inspirational = {
+    quotes: ["Believe in yourself.", "The only limit is your mind.", "Success is a journey, not a destination.", "Dream big, work hard, stay focused.", "Your attitude determines your direction."],
+    advice: ["Take one step at a time.", "Embrace challenges as opportunities.", "Learn from your mistakes.", "Stay committed to your goals.", "Focus on progress, not perfection."],
+    affirmations: ["I am capable of achieving my goals.", "I attract positivity into my life.", "I am resilient and strong.", "Every day, I am becoming a better version of myself.", "I radiate confidence, self-respect, and inner harmony."],
 };
 
-const messageSelector = (idx, objArrays) => {
-    return `Your quote is: ${objArrays.quotes[idx]}. The advice for you today is ${objArrays.advice[idx]}. Your affirmation is ${objArrays.affirmations[idx]}`
 
+function retrieveMessage(objArr) {
+    for (let element in objArr) {
+        let indexValue = generateRandomNumber(objArr[element].length);
+    
+        switch(element) {
+            case 'quotes':
+                individualMessage.push(`Today's quote is: ${objArr[element][indexValue]}`);
+                break;
+            case 'advice':
+                individualMessage.push(`The advice we have for you: ${objArr[element][indexValue]}`);
+                break;
+            case 'affirmations':
+                individualMessage.push(`Tell yourself: ${objArr[element][indexValue]}`);
+                break; 
+        }
+    }
+
+    const finalMessage = individualMessage.join('\n');
+    console.log(finalMessage);
 }
 
-console.log(messageSelector(2, messages));
+retrieveMessage(inspirational);
+
+
+
+
 
 
 
