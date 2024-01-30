@@ -34,7 +34,7 @@ The Daily Motivation Generator is a simple JavaScript application that generates
 
 ## Credits
 
--   This project was inspired by the idea of providing daily motivation and positivity to users.
+-   This project was inspired by the Codecademy JavaScript module portfolio project "Mixed Messages", after which I then decided to expand on the idea of providing daily motivation and positivity to users.
 -   Quotes, advice, and affirmations were sourced from various inspirational sources.
 
 ## License
