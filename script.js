@@ -108,6 +108,9 @@ function retrieveMessage(objArr) {
 /*function to update the ui, by receiving the parameter messages which is an object  
 with each category and its own message that we then use to update the User interface */
 const updateUi = (messages) => {
+    const section = document.getElementById('inspiration');
+    section.style.display = "flex";
+    
     const quoteParagraph = document.querySelector('.dynamic-quote');
     quoteParagraph.innerText = messages.quotes || 'No quotes available';
     
